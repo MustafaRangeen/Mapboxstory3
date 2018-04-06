@@ -282,8 +282,8 @@
             "features": [{
                 "type": "Feature",
                 "properties": {
-                    "message": "Foo",
-                    "iconSize": [60, 60]
+                    "message": "Myndigheder",
+                    "iconSize": [100, 100]
                 },
                 "geometry": {
                     "type": "Point",
@@ -291,19 +291,19 @@
                 }
             }, ]
         };
-
         // add markers to map
         geojson.features.forEach(function(marker) {
             // create a DOM element for the marker
             var el = document.createElement('div');
             el.className = 'marker';
-            el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+            el.style.backgroundImage = 'url(https://i.imgur.com/05KVDkWm.jpg' + marker.properties.iconSize.join('/') + '/)';
             el.style.width = marker.properties.iconSize[0] + 'px';
             el.style.height = marker.properties.iconSize[1] + 'px';
 
             el.addEventListener('click', function() {
                 window.alert(marker.properties.message);
             });
+
 
             // add marker to map
             new mapboxgl.Marker(el)
